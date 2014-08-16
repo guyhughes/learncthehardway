@@ -1,5 +1,5 @@
 CFLAGS=-Wall -g
-
+.PHONY: clean
+all: 
 clean:
-	rm -f 001
-	rm -f 003
+	find . -type f -o -type d -regextype posix-extended -iregex '.*/[0-9]{3}[(.dysn)]{0,1}' -ok rm {} \;
